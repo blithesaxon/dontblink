@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blithe - Don't Blink</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="main.css" type="text/css" rel="stylesheet" media="screen" />
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Teko:400,700" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137657530-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-137657530-2');
+    </script> -->
+    
+
+</head>
+
+  <body data-gr-c-s-loaded="true">
+
+    <div id="canvas_container" style="left: 0px;">
+      <canvas id="the_canvas" width="100%" height="100%"></canvas>
+    </div>
+
+    <section class="container">
+
+      <div class="header">
+          <a href="index.html" style="color: white; text-decoration: none;">BLITHE</a>
+      </div>
+
+      <div class="social">
+          <a id="copytoshare" data-clipboard-text="https://marcotiberio.github.io/DontBlink/" data-toggle="popover" data-placement="bottom" data-content="Link copied!">
+            <img src="assets/Blithe_Share.png" class="social-icon" style="width: 2.2em;">
+          </a>
+          <a href="https://www.instagram.com/blithesaxon/" target="_blank"><img src="assets/Blithe_Instagram.png" class="social-icon" style="width: 2.2em;"></a>
+          <a href="https://www.youtube.com/channel/UCHB8BxB78XyFX5lP5j7GbqQ" target="_blank"><img src="assets/Blithe_Youtube.png" class="social-icon" style="width: 2.2em;"></a>
+          <!-- <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:604wNNLUmrAmNOSEU8GfK4&size=basic&theme=dark&show-count=0" width="100" height="30" scrolling="no" frameborder="0" style="border:none; overflow:hidden; position: absolute; right: 3%; top: 3%; " allowtransparency="true"></iframe> -->
+          <a service="spotify" target="_blank" href="https://ffm.to/blitheforever" class="spotify button"><img data-v-63d784d1="" src="assets/Blithe_Spotify_Follow.png" class="social-icon" style="width: 6.2em;"></a>
+      </div>
+
+      <div class="main">
+
+        <!-- <div id="overlay">
+          <div id="overlay-text">Don't blink or the video will restart.<br>
+            <button id="button-close" style="cursor: pointer;">OK</button>
+          </div>
+        </div> -->
+        <!-- <video controls autoplay preload="auto" src="assets/videotest.mov"></video> https://www.youtube.com/embed/Jmu-tAFloV8
+        <video-js autoplay src="assets/videotest.mov"></video-js>           -->
+        <iframe id="video" width="100%" height="100%" src="https://www.youtube.com/embed/VOukf4Dh2Dg?controls=0&autoplay=1&showinfo=0&rel=0&loop=1&disablekb=1&modestbranding=1" frameborder="0" allow=" autoplay;"></iframe>
+      
+      </div>
+          
+      <div class="footer">
+        <div>
+          <p id="about" data-toggle="modal" data-target="#aboutModal" style="font-family: 'Open Sans', sans-serif;">Imprint</p>
+        </div>
+      </div>
+      
+  </section>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+              </div>
+              <div class="modal-body" style="font-family: 'Open Sans', sans-serif;">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                  culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!-- Webcam -->
+    <video id="_webcam" style="display: none;" playsinline></video>
+    <canvas
+      id="_imageData"
+      style="position: absolute; z-index: -999; opacity: 0;">
+    </canvas>
+
+
+    
+
+    
+
+    <!-- JQuery, Popper, Boostrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.3.0/dist/sweetalert2.all.min.js"></script>
+    <script src="js/utils/BRFv4PointUtils.js"></script>
+    <script src="js/BRFv4DemoMinimalWebcam.js"></script>
+    <script src="index_original.js"></script>
+
+    <!-- Include library Clipboard -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+
+    <script>
+      var brfv4 = {};
+    </script>
+
+    <!-- Instantiate clipboard by passing a string selector -->
+    <script>
+      var clipboard = new ClipboardJS('#copytoshare');
+      clipboard.on('success', function(e) {
+          console.log(e);
+      });
+      clipboard.on('error', function(e) {
+          console.log(e);
+      });
+      </script>
+
+      <script> 
+
+      $('#copytoshare').popover().click(function () {
+        setTimeout(function () {
+            $('#copytoshare').popover('hide');
+        }, 2000);
+      });
+    </script>
+
+  </body>
+</html>
